@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" hero-content flex-col lg:flex-row">
+    <div className=" hero-content flex-col lg:flex-row bg-black">
 
       <div className="mt-24 bg-[#C1DCDC] card flex-shrink-0 w-full max-w-md shadow-2xl ">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body ">

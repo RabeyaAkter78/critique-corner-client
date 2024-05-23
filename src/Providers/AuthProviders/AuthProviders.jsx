@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 import { app } from "../../../firebase/firebase.config";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth/cordova";
+import axios from "axios";
 
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
@@ -41,7 +42,33 @@ const AuthProviders = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
 
+
+            // get and set jwt token:
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                    .then(data => {
+                        // console.log(data.data.token);
+                        localStorage.setItem('access-token', data.data.token
+                        )
+                        setLoading(false);
+                    })
+            }
+            else {
+                localStorage.removeItem('access-token');
+            }
+
+            console.log('current user:', currentUser);
+            setLoading(false);
+        });
+        
+        return () => {
+            return unsubscribe();
+        }
+    }, [])
 
     const authInfo = {
         user,
