@@ -4,6 +4,7 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import { FaArrowRight } from "react-icons/fa";
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 const FeaturedProducts = () => {
     return (
@@ -11,11 +12,13 @@ const FeaturedProducts = () => {
             <SectionTitle
                 heading={"Best Selling Products"}
             ></SectionTitle>
-            <div className='w-full flex gap-4 md:my-4 '>
-                <div className='w-1/3 md:mt-4 p-2'>
+            <div className='w-full flex flex-col md:flex-row gap-4 md:my-4 '>
+                <div className='w-full md:w-1/3 md:mt-4 p-2'>
                     <h1 className='text-4xl font-semibold md:mt-4 md:mb-8' >Best Selling <br /> Plants</h1>
                     <p className='md:mb-8'>Easiest way to healthy life by buying your favorite plants </p>
-                    <button className='btn md:btn-wide bg-[#C1DCDC] mt-4'>See More  <FaArrowRight /> </button>
+                    <Link to="/products">
+                        <button className='btn md:btn-wide bg-[#C1DCDC] mt-4'>See More  <FaArrowRight /> </button>
+                    </Link>
                 </div>
                 <div className=' w-full'>
                     <Swiper
