@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-    const [user] = useState(true)
+    const [user] = useState(false)
 
     const navItems = <>
         <li><Link to="/">Home</Link></li>

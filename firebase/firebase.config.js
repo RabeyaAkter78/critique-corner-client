@@ -1,15 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth/web-extension";
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAj0ghGF7Q8BRJ-IlPhS0WJfMDW1lV3ruk",
-    authDomain: "critique-corner.firebaseapp.com",
-    projectId: "critique-corner",
-    storageBucket: "critique-corner.appspot.com",
-    messagingSenderId: "520499963372",
-    appId: "1:520499963372:web:64e4d8405b2bf43d014cc9"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-export default auth;
+export const app = initializeApp(firebaseConfig);
