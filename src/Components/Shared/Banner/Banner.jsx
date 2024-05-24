@@ -1,5 +1,7 @@
 
 const Banner = () => {
+
+
     return (
         <div className="carousel w-full h-[600px] mb-16 rounded-xl">
             <div id="slide1" className="carousel-item relative w-full bg-[#C1DCDC] flex flex-col lg:flex-row  justify-between items-center">
@@ -29,13 +31,38 @@ const Banner = () => {
 
 
                         <div className="w-full md:full">
-                            <label className="input input-bordered flex items-center gap-2">
-                                <input type="text" className="grow" placeholder="What are you looking for?" />
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-                            </label>
+                            {/* <label className="input input-bordered flex items-center gap-2">
+                                <input type="search"
+                                    value={searchQuery}
+                                    className="grow"
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    placeholder="What are you looking for?" />
+
+                                <button onClick={handleSearch}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg></button>
+
+                            </label> */}
+                            {/* search */}
+
+                            {/* search */}
+
+                            <button className="btn btn-wide ">See more</button>
+
+
                             <img className="absolute w-34 md:w-[175px] h-16 md:h-[169.89px] top-80 md:top-[359.19px] left-16 md:left-[600px] border-4 md:rotate-53-14" src="/img -1.png" alt="" />
 
                             <img className="absolute w-34 md:w-[112.54px] h-24 md:h-[154.41px] top-36  md:top-10 left-96 md:left-[1137.24px] md:border-5 md:rotate--18-13" src="/img-2.png" alt="" />
+
+                            {/* <div className="w-full grid grid-cols-3">
+
+                                {searchResults.length > 0 && (
+                                    <ul>
+                                        {searchResults.map((product) => (
+                                            <li key={product._id}>{product.name} - {product.price}
+                                                -{product.image}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div> */}
                         </div>
 
                     </div>
@@ -46,6 +73,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

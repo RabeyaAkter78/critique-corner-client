@@ -1,0 +1,75 @@
+[
+    {
+      "name": "Smartphone",
+      "image": "../src/assets/img/phone1.jpeg",
+      "price": 699.99,
+      "averageRating": 4.7,
+      "category": "Electronics",
+      "brand": "Brand A",
+      "availability": "In Stock",
+      "specifications": {
+        "weight": "200g",
+        "dimensions": "160 x 75 x 8 mm",
+        "color": "Black",
+        "modelNumber": "XYZ123"
+      }
+    },
+    {
+      "name": "4K TV ABC",
+      "image": "../src/assets/img/tv.jpeg",
+      "price": 999.99,
+      "averageRating": 4.5,
+      "category": "Electronics",
+      "brand": "Brand B",
+      "availability": "In Stock",
+      "specifications": {
+        "weight": "10kg",
+        "dimensions": "140 x 80 x 15 mm",
+        "resolution": "3840 x 2160",
+        "screenSize": "55 inches"
+      }
+    },
+    {
+      "name": "Wireless Headphones",
+      "image": "../src/assets/img/headphone.jpeg",
+      "price": 199.99,
+      "averageRating": 4.2,
+      "category": "Electronics",
+      "brand": "Brand C",
+      "availability": "Out of Stock",
+      "specifications": {
+        "weight": "250g",
+        "batteryLife": "20 hours",
+        "color": "Blue",
+        "modelNumber": "WH-1000XM4"
+      }
+    },
+    {
+      "name": "Men's Leather Jacket",
+      "image": "../src/assets/img/jacket.jpeg",
+      "price": 299.99,
+      "averageRating": 4.6,
+      "category": "Fashion",
+      "brand": "Brand F",
+      "availability": "In Stock",
+      "specifications": {
+        "material": "Genuine Leather",
+        "sizesAvailable": ["S", "M", "L", "XL"],
+        "color": "Brown"
+      }
+    },
+    {
+      "name": "Indoor Plant - Fiddle Leaf Fig",
+      "image": "../src/assets/img/plant.jpeg",
+      "price": 59.99,
+      "averageRating": 4.9,
+      "category": "Plants",
+      "brand": "Brand G",
+      "availability": "In Stock",
+      "specifications": {
+        "height": "3 feet",
+        "potSize": "10 inches",
+        "lightRequirement": "Bright Indirect Light"
+      }
+    }
+  ]

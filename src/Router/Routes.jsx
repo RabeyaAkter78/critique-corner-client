@@ -7,6 +7,7 @@ import Fashion from "../Components/Fashion/Fashion";
 import Electronics from "../Components/Electronics/Electronics";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import MakeReview from "../Components/MakeReview/MakeReview";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>
+      },
+      {
+        path: "makeReview",
+        element: <MakeReview></MakeReview>
       },
     ]
   },
