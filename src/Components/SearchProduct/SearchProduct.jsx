@@ -8,20 +8,7 @@ const SearchProduct = () => {
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    // const handleSearch = async () => {
-    //     try {
-    //         const response = await fetch(`http://localhost:5000/products?query=${(searchQuery)}`);
-    //         if (!response.ok) {
-    //             throw new Error('There is an error');
-    //         }
-
-    //         const data = await response.json();
-    //         console.log(data);
-    //         setSearchResults(data);
-    //     } catch (error) {
-    //         console.error('Error searching products:', error);
-    //     }
-    // };
+  
 
     const handleSearch = () => {
         setLoading(true);
@@ -44,10 +31,8 @@ const SearchProduct = () => {
         <div className=" my-8 p-4 rounded-xl">
             <label className="input input-bordered flex items-center gap-2 bg-[#C1DCDC]">
                 <input type="search"
-                    // value={searchQuery}
                     className="grow "
                     onChange={(e) => setSearch(e.target.value)}
-                    // onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="What are you looking for?" />
 
                 <button onClick={handleSearch}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg></button>
@@ -65,7 +50,7 @@ const SearchProduct = () => {
                             <p> Category:{data.category}</p>
                             <p>Availability: {data.availability}</p>
                             <p className="flex gap-2 items-center ">Average Rating: {data.averageRating} <FaStar></FaStar> </p>
-                            <div className="felx card-actions justify-end">
+                            <div className="flex card-actions justify-end">
                                 <Link to="/makeReview">
                                     <button className="btn"  >Review</button>
                                 </Link>

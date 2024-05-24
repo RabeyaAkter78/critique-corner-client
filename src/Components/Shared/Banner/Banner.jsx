@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -45,7 +46,9 @@ const Banner = () => {
 
                             {/* search */}
 
-                            <button className="btn btn-wide ">See more</button>
+                            <Link to="fashion">
+                                <button className="btn btn-wide ">See more</button>
+                            </Link>
 
 
                             <img className="absolute w-34 md:w-[175px] h-16 md:h-[169.89px] top-80 md:top-[359.19px] left-16 md:left-[600px] border-4 md:rotate-53-14" src="/img -1.png" alt="" />
