@@ -46,7 +46,7 @@ const Banner = () => {
 
                             {/* search */}
 
-                            <Link to="fashion">
+                            <Link to="products">
                                 <button className="btn btn-wide ">See more</button>
                             </Link>
 

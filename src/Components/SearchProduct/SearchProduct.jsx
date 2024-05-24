@@ -17,7 +17,7 @@ const SearchProduct = () => {
             .then(res => res.json())
             .then(data => {
                 setSearchResults(data);
-                console.log(data);
+                // console.log(data);
             });
 
         setLoading(false);

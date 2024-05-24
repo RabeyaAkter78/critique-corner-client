@@ -1,8 +1,8 @@
 
 const MakeReview = () => {
     return (
-        <div>
-            make Review
+        <div className="my-20 bg-red-500">
+        <h1>make review</h1>
         </div>
     );
 };
