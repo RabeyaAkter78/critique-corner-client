@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-[#C1DCDC] text-base-content">
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
@@ -36,7 +36,7 @@ const Footer = () => {
                     </fieldset>
                 </form>
             </footer>
-            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer className="footer footer-center p-4 bg-[#C1DCDC] text-base-content">
                 <aside>
                     <p>Copyright © 2024 - All right reserved by Critique Corner Ltd</p>
                 </aside>
