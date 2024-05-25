@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
+import { FaHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 // import { Dropdown, DropdownItem } from 'daisyui';
 const Products = () => {
@@ -9,11 +10,19 @@ const Products = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isSort, setSort] = useState(true)
 
+    const [likes, setLikes] = useState(false)
+
+    const handleLikes = () => {
+        setLikes(true);
+        toast.success('Thank you for liking it!');
+    }
+
+
     // load all product:
     useEffect(() => {
         setLoading(true);
         setError(null);
-        fetch(`http://localhost:5000/products`)
+        fetch(`https://critique-corner.vercel.app/products`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -29,7 +38,7 @@ const Products = () => {
     };
     // filter and sort:
     useEffect(() => {
-        fetch(`http://localhost:5000/products?isSort=${isSort}`)
+        fetch(`https://critique-corner.vercel.app/products?isSort=${isSort}`)
             .then(res => res.json())
             .then(data => { setProducts(data) })
 
@@ -42,14 +51,14 @@ const Products = () => {
             {error && <p>{error}</p>}
 
             {/* filter and sort start */}
-            <div className="filters mb-4 bg-red-500">
+            {/* <div className="filters mb-4 bg-red-500">
                 {<button
                     className="p-2 mt-20 text-green-600 text-lg mb-2 bg-red-100 rounded-lg"
                     onClick={() => setSort(!isSort)}>
                     {isSort ? 'Low To High' : 'High To Low'}
                 </button>
                 }
-            </div>
+            </div> */}
             {/* Show all product as a table */}
             <div className="overflow-x-auto">
                 <table className="table mt-36 mb-20">
@@ -123,7 +132,9 @@ const Products = () => {
                         )}
 
                         <div className="modal-action flex gap-2">
-                            <Link className="btn" to="/makeReview">Give Feedback </Link>
+                            <span><button className="btn flex gap-1 items-center" onClick={handleLikes}  ><FaHeart></FaHeart> Favourite  </button>
+                                <Toaster />
+                            </span>
 
                             <form method="dialog">
                                 <button className="btn">Close</button>
