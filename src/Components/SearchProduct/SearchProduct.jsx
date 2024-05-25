@@ -13,7 +13,7 @@ const SearchProduct = () => {
     const handleSearch = () => {
         setLoading(true);
         setError(null);
-        fetch(`http://localhost:5000/products/${search}`)
+        fetch(`https://critique-corner.vercel.app/products/${search}`)
             .then(res => res.json())
             .then(data => {
                 setSearchResults(data);
