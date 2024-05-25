@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+// import { Dropdown, DropdownItem } from 'daisyui';
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [isSort, setSort] = useState(true)
 
+    // load all product:
     useEffect(() => {
         setLoading(true);
         setError(null);
@@ -20,38 +22,35 @@ const Products = () => {
 
         setLoading(false);
     }, []);
+    // load modal:
     const handleDetailsClick = (product) => {
         setSelectedProduct(product);
         document.getElementById('product_modal').showModal();
     };
+    // filter and sort:
+    useEffect(() => {
+        fetch(`http://localhost:5000/products?isSort=${isSort}`)
+            .then(res => res.json())
+            .then(data => { setProducts(data) })
+
+    }, [isSort])
 
 
     return (
         <div className="mb-50 ">
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
-            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-48">
-                {products.map(data => <div  key={data._id} >
-                    <div className="card w-96 h-full mt-28 bg-[#C1DCDC] p-4 shadow-xl">
-                        <figure><img className="p-4  border-white border-2" src={data.image} alt="image" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Name: {data.name}</h2>
-                            <p>Price: ${data.price}</p>
-                            <p> Category:{data.category}</p>
-                            <p>Availability: {data.availability}</p>
-                            <p className="flex gap-2 items-center ">Average Rating: {data.averageRating} <FaStar></FaStar> </p>
-                            <div className="flex card-actions justify-end">
-                                <Link to="/makeReview">
-                                    <button className="btn"  >Details</button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>)}
 
-            </div> */}
-
+            {/* filter and sort start */}
+            <div className="filters mb-4 bg-red-500">
+                {<button
+                    className="p-2 mt-20 text-green-600 text-lg mb-2 bg-red-100 rounded-lg"
+                    onClick={() => setSort(!isSort)}>
+                    {isSort ? 'Low To High' : 'High To Low'}
+                </button>
+                }
+            </div>
+            {/* Show all product as a table */}
             <div className="overflow-x-auto">
                 <table className="table mt-36 mb-20">
                     {/* head */}
@@ -123,7 +122,9 @@ const Products = () => {
                             </div>
                         )}
 
-                        <div className="modal-action">
+                        <div className="modal-action flex gap-2">
+                            <Link className="btn" to="/makeReview">Give Feedback </Link>
+
                             <form method="dialog">
                                 <button className="btn">Close</button>
                             </form>

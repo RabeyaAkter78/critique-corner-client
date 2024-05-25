@@ -8,6 +8,9 @@ import Electronics from "../Components/Electronics/Electronics";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import MakeReview from "../Components/MakeReview/MakeReview";
+import PrivateRoute from "./PeivateRoute";
+import AllReview from "../Components/AllReview/AllReview";
+import Replay from "../Components/Replay/Replay";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +31,10 @@ export const router = createBrowserRouter([
         element: <Categories></Categories>
       },
       {
+        path: "reviews",
+        element: <AllReview></AllReview>
+      },
+      {
         path: "fashion",
         element: <Fashion></Fashion>
       },
@@ -45,8 +52,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "makeReview",
-        element: <MakeReview></MakeReview>
+        element:<PrivateRoute><MakeReview></MakeReview></PrivateRoute>,
+      },
+      {
+        path: "replay",
+        element: <Replay></Replay>
       },
     ]
   },
 ]);
+
+
