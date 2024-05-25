@@ -11,7 +11,7 @@ const AllReview = () => {
     useEffect(() => {
         setLoading(true);
         setError(null);
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://critique-corner.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -22,7 +22,7 @@ const AllReview = () => {
     }, []);
     return (
         <div>
-           <div className="overflow-x-auto">
+            <div className="overflow-x-auto">
                 <table className="table mt-36 mb-20">
                     {/* head */}
                     <thead>
@@ -32,7 +32,7 @@ const AllReview = () => {
                             <th>Name</th>
                             <th>Ratings</th>
                             <th>Review</th>
-                            <th>Replay</th>
+                            <th>FeedBack</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +52,7 @@ const AllReview = () => {
                                 <td>{data.name}</td>
                                 <td className="flex gap-2 items-center">{data.ratings}<FaStar></FaStar> </td>
                                 <td>{data.description}</td>
-                              
+
                                 <th>
                                     <Link to='/replay' state={data}>
                                         <button className="btn  bg-[#C1DCDC] border-white  border-2 btn-xs">Replay</button>
