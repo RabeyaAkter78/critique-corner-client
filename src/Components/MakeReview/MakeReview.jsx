@@ -17,7 +17,7 @@ const MakeReview = () => {
             return;
         }
 
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://critique-corner.vercel.app/addReview", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

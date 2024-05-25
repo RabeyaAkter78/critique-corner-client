@@ -9,7 +9,10 @@ const NavBar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/products">Products</Link></li>
         <li><Link to="/reviews">Reviews</Link></li>
-        <li>
+        {/* {user &&
+            <li><Link to="/dashboard">DASHBOARD <span className="text-red-400"></span> </Link></li>
+        } */}
+        {/* <li>
             <details>
                 <summary>Categories</summary>
                 <ul className="p-2">
@@ -17,7 +20,7 @@ const NavBar = () => {
                     <li><Link to="/electronics">Electronics</Link></li>
                 </ul>
             </details>
-        </li>
+        </li> */}
     </>
 
 
